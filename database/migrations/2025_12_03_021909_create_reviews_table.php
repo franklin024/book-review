@@ -16,11 +16,11 @@ return new class extends Migration
             $table->text("review");
             $table->unsignedTinyInteger("rating");
             $table->timestamps();
+            $table->foreignId("book_id")->constrained()->cascadeOnDelete();
 
-            $table->unsignedBigInteger("book_id");
-            $table->foreign("book_id")->references("id")->on("books")->onDelete("cascade");
+            // $table->unsignedBigInteger("book_id");
+            // $table->foreign("book_id")->references("id")->on("books")->onDelete("cascade");
             //giống nhau
-            // $table->foreignId("book_id")->constrained()->cascadeOnDelete();
         });
     }
 
