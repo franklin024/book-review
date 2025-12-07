@@ -52,12 +52,12 @@
 
     <ul>
         @forelse($books as $book)
+            {{-- @dd($book) --}}
             <li class="mb-4">
                 <div class="book-item">
                     <div class="flex flex-wrap items-center justify-between">
                         <div class="w-full grow sm:w-auto">
-                            <a href="#" class="book-title"
-                                href="{{ route('books.show', $book) }}">{{ $book->title }}</a>
+                            <a href="{{ route('books.show', $book) }}" class="book-title">{{ $book->title }}</a>
                             <span class="book-author">by {{ $book->author }}</span>
                         </div>
                         <div>
